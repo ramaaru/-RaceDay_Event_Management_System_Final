@@ -16,5 +16,7 @@ jobs:
         run: dotnet restore RaceDay.sln
       - name: Build
         run: dotnet build RaceDay.sln --no-restore --configuration Release
+      - name: Build tests
+        run: dotnet build RaceDay.Tests/RaceDay.Tests.csproj --no-restore --configuration Release
       - name: Test
         run: dotnet test RaceDay.Tests/RaceDay.Tests.csproj --no-build --configuration Release
