@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "RaceDay.MvC": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51522;http://localhost:51523"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@model List<EnrolmentViewModel>
+@{ViewData["Title"]="Event enrolments";}
+<h1>Event enrolments</h1><p>Event ID: @ViewBag.EventId</p>
+<div class="table-responsive"><table class="table"><thead><tr><th>Participant</th><th>Category</th><th>Enrolment date</th><th>Race number</th><th>Status</th></tr></thead><tbody>@foreach(var x in Model){<tr><td>@x.Participant</td><td>@(x.Category??x.CategoryName??$"Category {x.EventCategoryID}")</td><td>@x.EnrolmentDate.ToString("dd MMM yyyy")</td><td>@x.RaceNumber</td><td><span class="status-pill @x.EnrolmentStatus.ToLowerInvariant()">@x.EnrolmentStatus</span></td></tr>}</tbody></table></div><a asp-action="Index" class="btn btn-outline-primary">Back to dashboard</a>

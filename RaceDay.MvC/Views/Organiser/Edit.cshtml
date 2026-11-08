@@ -1,0 +1,12 @@
+@model EventViewModel
+@{ViewData["Title"]="Edit event";}
+<h1>Edit event</h1>
+<partial name="_EventForm" model="Model"/>
+<hr />
+<h2>Event banner</h2>
+@if (Model.HasBanner) { <img src="@Url.Action("Banner", "Organiser", new { id = Model.EventID })" alt="Event banner" class="img-fluid rounded mb-3" /> }
+<form method="post" enctype="multipart/form-data" asp-action="UploadBanner" asp-route-id="@Model.EventID">
+    <label class="form-label" for="file">Upload banner image</label>
+    <input class="form-control" type="file" id="file" name="file" accept="image/jpeg,image/png,image/webp" required />
+    <button class="btn btn-primary mt-2">Upload banner</button>
+</form>

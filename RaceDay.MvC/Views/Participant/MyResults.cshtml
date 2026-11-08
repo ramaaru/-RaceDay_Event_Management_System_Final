@@ -1,0 +1,4 @@
+@model List<ResultViewModel>
+@{ViewData["Title"]="My results";}
+<h1>My race results</h1><p class="text-secondary">Your personal race history from completed events.</p>
+<div class="table-responsive"><table class="table"><thead><tr><th>Event</th><th>Date</th><th>Category</th><th>Finish time</th><th>Position</th><th>Status</th></tr></thead><tbody>@foreach(var x in Model){<tr><td>@(x.EventName??"Race event")</td><td>@(x.EventDate?.ToString("dd MMM yyyy")??"—")</td><td>@(x.CategoryName??"—")</td><td>@(x.FinishTime?.ToString()??"—")</td><td>@x.PositionDisplay</td><td>@x.ResultStatus</td></tr>}</tbody></table></div>

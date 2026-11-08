@@ -1,0 +1,42 @@
+@model ProfileViewModel
+@{ViewData["Title"]="My profile";}
+<h1>My profile</h1>
+<div class="form-shell wide">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="FirstName" class="form-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="LastName" class="form-label"></label>
+                <input asp-for="LastName" class="form-control" />
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="PhoneNumber" class="form-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Role</label>
+            <input value="@Model.Role" class="form-control" readonly />
+        </div>
+        <button class="btn btn-primary">Save profile</button>
+    </form>
+    <hr />
+    <h2>Profile picture</h2>
+    @if (Model.HasProfileImage)
+    {
+        <img src="@Url.Action("Picture", "Profile")" alt="Profile picture" class="rounded-circle mb-3" width="140" height="140" />
+    }
+    <form method="post" enctype="multipart/form-data" asp-action="UploadPicture">
+        <label class="form-label" for="file">Upload profile picture</label>
+        <input class="form-control" type="file" id="file" name="file" accept="image/jpeg,image/png,image/webp" required />
+        <button class="btn btn-primary mt-2">Upload picture</button>
+    </form>
+</div>

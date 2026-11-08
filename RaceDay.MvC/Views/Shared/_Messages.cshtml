@@ -1,0 +1,1 @@
+@if(TempData["Success"] is string s){<div class="alert alert-success alert-dismissible fade show">@s<button class="btn-close" data-bs-dismiss="alert"></button></div>}@if(TempData["Error"] is string e){<div class="alert alert-danger">@e</div>}@if(ViewBag.Error is string er && !string.IsNullOrWhiteSpace(er)){<div class="alert alert-warning">@er</div>}
