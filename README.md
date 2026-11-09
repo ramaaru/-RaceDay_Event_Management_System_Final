@@ -36,3 +36,6 @@ Part 3 extends the Part 2 Web API by introducing an ASP.NET Core MVC frontend th
 ### Project Objective
 
 The objective of RaceDay is to automate event management by providing an integrated platform that simplifies event organisation, participant registration, enrolment management and race result tracking.
+
+
+https://youtu.be/-UDiuFaqo0M
